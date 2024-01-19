@@ -1,0 +1,30 @@
+﻿@model MessageModel
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chat</title>
+    </head>
+    <body>
+        <div>
+            <form method="post" asp-action="SendMessage" asp-controller="Chat">
+                <div>
+                    UserName: <input asp type="text" asp-for="User" placeholder="username"/>
+                    <span asp-validation-for="User"></span>
+                </div>
+                <div>
+                    Message: <input asp type="text" asp-for="Message" placeholder="message" />
+                <span asp-validation-for="Message"></span>
+                </div>
+                <div>
+                    <button type="submit" value="confirm">Отправить</button>
+                </div>
+            </form>
+        </div>
+        <div id="chatroom">
+        </div>
+    </body>
+</html>
+<script src="~/js/signalr/dist/browser/signalr.min.js"></script>
+<script src="/js/jquery/dist/jquery.min.js"></script>
+<script src="~/js/chat.js"></script>
